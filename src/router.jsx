@@ -40,7 +40,7 @@ const Toot = () => (
 const _Router = () => (
 	<Router history={browserHistory}>
     	<Route path="/" component={App}>
-    		<IndexRedirect to="/clap/" />
+    		<IndexRedirect to="clap" />
   			<Route path="clap" component={Clap}/>
   			<Route path="toot" component={Toot}/>
   			<Route path="about" component={About}/>
