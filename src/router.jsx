@@ -3,6 +3,7 @@ import { Router, Route, Link, browserHistory, IndexRedirect } from 'react-router
 
 import App from './app'
 import TextGen from './components/textGen'
+import About from './components/about'
 
 const noText = '<span class="noText">🤔</span>'
 
@@ -34,10 +35,6 @@ const Clap = () => (
 
 const Toot = () => (
 	<TextGen processor={tooify}/>
-)
-
-const About = () => (
-	<h1>about</h1>
 )
 
 const _Router = () => (
