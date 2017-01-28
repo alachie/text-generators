@@ -1,0 +1,40 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "React Boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production webpack -p --progress",
+    "cleanup": "rm README.md && sudo rm -r .git"
+  },
+  "author": "Lachie Golledge",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "*",
+    "babel-plugin-react-html-attrs": "*",
+    "babel-plugin-transform-class-properties": "*",
+    "babel-plugin-transform-decorators-legacy": "*",
+    "babel-preset-stage-0": "*",
+    "webpack-dev-server": "*",
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "webpack": "*",
+    "autoprefixer": "*",
+    "css-loader": "*",
+    "node-sass": "*",
+    "postcss-loader": "*",
+    "sass-loader": "*",
+    "style-loader": "*"
+  },
+  "dependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "react-redux": "^5.0.2",
+    "react-router": "^3.0.2",
+    "redux": "^3.6.0"
+  }
+}
