@@ -1,0 +1,51 @@
+.about
+	flex: 1
+	text-align: center
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	overflow-x: hidden
+	overflow-y: scroll
+
+	h2
+		margin: 40px
+		&:first-child
+			margin-top: 0
+		text-transform: uppercase
+		font-weight: 100
+		display: inline-block
+		position: relative
+		@media(max-width: 500px)
+			margin: 40px
+			margin-top: 0
+			font-size: 20px
+	a, .inline-emoji
+		color: white
+
+	p
+		max-width: 600px
+		font-size: 22px
+		text-align: left
+		@media(max-width: 500px)
+			font-size: 16px
+		line-height: 1.5em
+		margin: 0
+		margin-bottom: 20px
+		font-weight: 100
+		color: rgba(white,0.5)
+		&:last-child
+			margin-bottom: 0
+	.large
+		font-size: 60px
+	.row
+		max-width: 600px
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
+	.row .col
+		text-align: left
+		width: 75%
+		&:first-child
+			width: 25%
+		float: left
