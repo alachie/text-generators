@@ -6,10 +6,10 @@ export default class MainMenu extends React.Component {
 		return (
 			<nav className="MainMenu">
 				<ul>
-					<li><Link to="clap" activeClassName="active"><span className="emoji">👏</span></Link></li>
-					<li><Link to="toot" activeClassName="active"><span className="emoji">🎺</span></Link></li>
+					<li title="clap"><Link to="clap" activeClassName="active"><span className="emoji">👏</span></Link></li>
+					<li title="toot"><Link to="toot" activeClassName="active"><span className="emoji">🎺</span></Link></li>
 					<li className="spacer"></li>
-					<li><Link to="about" activeClassName="active"><span className="emoji">🙋‍♂️</span></Link></li>
+					<li title="about"><Link to="about" activeClassName="active"><span className="emoji">🙋‍♂️</span></Link></li>
 				</ul>
 			</nav>
 		)
