@@ -9,7 +9,7 @@ const About = () => (
 				<span className="large">👏</span>
 			</div>
 			<div class="col">
-				<p>Clap, is a processor that replaces spaces in scetences with a clap emoji (<span className="inline-emoji">👏</span>) based on <a href="http://knowyourmeme.com/memes/clap-emoji">this meme</a>.</p>
+				<p>Clap is a processor that replaces spaces in scetences with a clap emoji (<span className="inline-emoji">👏</span>) based on <a href="http://knowyourmeme.com/memes/clap-emoji">this meme</a>.</p>
 			</div>
 		</div>
 		<div class="row">
@@ -17,7 +17,7 @@ const About = () => (
 				<span className="large">🎺</span>
 			</div>
 			<div class="col">
-				<p>Toot, is a processor that replaces all regular width characters with <a href="https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms">full width characters</a>.</p>
+				<p>Toot is a processor that replaces all regular characters with <a href="https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms">full width characters</a>.</p>
 			</div>
 		</div>
 	</div>
