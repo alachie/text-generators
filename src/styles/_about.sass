@@ -19,7 +19,8 @@
 		&:first-child
 			margin-top: 0
 
-	a, .inline-emoji
+	a, 
+	.inline-emoji
 		color: white
 
 	p
@@ -41,43 +42,49 @@
 	.row
 		max-width: 600px
 		margin-bottom: 20px
+		
 		&:last-child
 			margin-bottom: 0
 
 	.row .col
 		text-align: left
 		width: 75%
-		&:first-child
-			width: 25%
 		float: left
+
+		&:first-child
+			width: 25%	
 
 @media(max-height: 700px), (max-width: 500px)
 	.about
 		padding-top: 80px
 		align-items: stretch
 		justify-content: flex-start
+	
 	h2
 		margin: 40px
 		margin-top: 0
-		// font-size: 20px
+
 	h2:first-child
 		margin-top: 40px
-
 
 	p, .row
 		display: block 
 		margin-left: auto !important
 		margin-right: auto !important
 		margin-bottom: 20px
+
 	.row:last-child
 		padding-bottom: 80px
 
 @media(max-width: 500px)
 	.about
 		padding-top: 40px
+
 	.row:last-child
 		padding-bottom: 40px
+
 	p
 		font-size: 16px !important
+
 	h2
 		font-size: 20px
