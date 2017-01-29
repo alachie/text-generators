@@ -1,21 +1,19 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { updateValue } from "../actions"
 
+@connect((store) => {
+  return {userInput: store.userInput}
+})
 export default class TextGen extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			value: '<span class="noText">🤔</span>'
-		}
 		this.handleKeyUp = this.handleKeyUp.bind(this)
 	}
 
 	handleKeyUp(e) {
 		const value = e.target.value
-
-		this.setState({
-			value: this.props.processor(value)
-		})
-
+		this.props.dispatch(updateValue(value))
 	}
 
 	handleHighlight(e) {	
@@ -30,11 +28,25 @@ export default class TextGen extends React.Component {
 		}
 	}
 
+	generateOutput(s) {
+		const noText = '<span class="noText">🤔</span>'
+
+		const output = this.props.processor(s)
+
+		if(s.trim() === '') {
+			return noText
+		} else {
+			return output
+		}
+	}
+
 	render() {
+		const { inputValue } = this.props.userInput
+		const outputValue = this.generateOutput(inputValue)
 		return (
 			<div class="TextGen">
-				<input class="input" onKeyUp={this.handleKeyUp} placeholder="Type Something Here ✍️"></input>
-				<div class="output" onClick={this.handleHighlight} dangerouslySetInnerHTML={{ __html: this.state.value }}></div>
+				<input class="input" onKeyUp={this.handleKeyUp} placeholder="Type Something Here ✍️" defaultValue={inputValue}></input>
+				<div class="output" onClick={this.handleHighlight} dangerouslySetInnerHTML={{ __html: outputValue }}></div>
 			</div>
 		)
 	}
