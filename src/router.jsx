@@ -4,9 +4,12 @@ import { Router, Route, Link, hashHistory, IndexRedirect } from 'react-router'
 import App from './app'
 import TextGen from './components/textGen'
 import About from './components/about'
-const clapChar = '👏'
+// const clapChar = '👏'
 
-const emojify = (s) => clapChar + s.trim().split(' ').join(clapChar) + clapChar;
+const emojify = (s, options) => {
+  const { clapChar } = options
+  return clapChar + s.trim().split(' ').join(clapChar) + clapChar;
+}
 
 const tootChar = (c) => {
 	let n = 0

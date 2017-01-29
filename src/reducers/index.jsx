@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
 
 const defaultUserInput = {
-	inputValue: ''
+	inputValue: '',
+	clapChar: '👏'
 }
 
 const userInput = (state = defaultUserInput, action) => {
@@ -11,6 +12,12 @@ const userInput = (state = defaultUserInput, action) => {
 			return {
 				...state,
 				inputValue: action.value
+			}
+
+		case 'UPDATE_CLAPCHAR':
+			return {
+				...state,
+				clapChar: action.char
 			}
 		default: 
 			return state

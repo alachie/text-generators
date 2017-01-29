@@ -31,7 +31,9 @@ export default class TextGen extends React.Component {
 	generateOutput(s) {
 		const noText = '<span class="noText">🤔</span>'
 
-		const output = this.props.processor(s)
+		const output = this.props.processor(s, {
+			clapChar: this.props.userInput.clapChar
+		})
 
 		if(s.trim() === '') {
 			return noText
@@ -45,9 +47,11 @@ export default class TextGen extends React.Component {
 		const outputValue = this.generateOutput(inputValue)
 		return (
 			<div class="TextGen">
-				<input class="input" onKeyUp={this.handleKeyUp} placeholder="Type Something Here ✍️" defaultValue={inputValue}></input>
-				<div class="output" onClick={this.handleHighlight} dangerouslySetInnerHTML={{ __html: outputValue }}></div>
+				<input class="input" onKeyUp={this.handleKeyUp} placeholder="Type Something Here ✍️" defaultValue={inputValue}/>
+				<div class="output" onClick={this.handleHighlight} dangerouslySetInnerHTML={{ __html: outputValue }}/>
 			</div>
 		)
 	}
 }
+
+// 
