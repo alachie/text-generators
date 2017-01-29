@@ -4,7 +4,6 @@ import { Router, Route, Link, hashHistory, IndexRedirect } from 'react-router'
 import App from './app'
 import TextGen from './components/textGen'
 import About from './components/about'
-// const clapChar = '👏'
 
 const emojify = (s, options) => {
   const { clapChar } = options

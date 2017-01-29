@@ -53,5 +53,3 @@ export default class TextGen extends React.Component {
 		)
 	}
 }
-
-// 
