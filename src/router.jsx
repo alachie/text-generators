@@ -1,5 +1,5 @@
 import React    from 'react'
-import { Router, Route, Link, hashHistory, IndexRedirect } from 'react-router'
+import { Router, Route, Link, browserHistory, IndexRedirect } from 'react-router'
 
 import App from './app'
 import TextGen from './components/textGen'
@@ -26,7 +26,7 @@ const Toot = () => (
 )
 
 const _Router = () => (
-	<Router history={hashHistory}>
+	<Router history={browserHistory}>
     	<Route path="/" component={App}>
     		<IndexRedirect to="clap" />
   			<Route path="clap" component={Clap}/>

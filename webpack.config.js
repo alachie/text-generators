@@ -6,7 +6,7 @@ var autoprefixer = require('autoprefixer');
 module.exports = {
   entry: './src/index.jsx',
   output: {
-    filename: 'bundle.js'
+    filename: './build/bundle.js'
   },
   devServer: {
     historyApiFallback: true
