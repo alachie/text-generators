@@ -21,6 +21,14 @@ const About = () => (
 				<p>Toot is a processor that replaces all regular characters with <a href="https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms">full width characters</a>.</p>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col">
+				<span className="large">🅱️</span>
+			</div>
+			<div class="col">
+				<p>B is a processor that replaces the letter b with a "blood type b" emoji. Based on <a href="http://knowyourmeme.com/memes/b-button-emoji-%F0%9F%85%B1">this meme</a>.</p>
+			</div>
+		</div>
 	</div>
 )
 export default About
