@@ -1,24 +1,26 @@
-var debug        = process.env.NODE_ENV !== "production";
+var debug        = process.env.NODE_ENV !== 'production';
 var webpack      = require('webpack');
-var path         = require('path');
 var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: './src/index.jsx',
   output: {
-    filename: './build/bundle.js'
+    filename: 'bundle.js'
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.sass', '.css', '.scss']
   },
   devServer: {
     historyApiFallback: true
   },
   devtool: 'cheap-module-source-map',
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx$/,
+        test: /\.(js|jsx)$/, // match .js and .jsx
         loader: 'babel-loader',
         exclude: /(node_modules|bower_components)/,
-        query: {
+        options: {
           presets: [
             'react', 
             'es2015', 
@@ -31,27 +33,29 @@ module.exports = {
           ],
         }
       },
-      {test: /\.sass$/, loader: 'style!css!postcss-loader!sass!'}
+      {
+        test: /\.sass$/, 
+        use: [
+          'style-loader',
+          {loader: 'css-loader', options: {
+            minimize: debug ? false : true
+          }},
+          {loader: 'postcss-loader', options: {plugins: () => [autoprefixer]}},
+          {loader: 'sass-loader', options: {indentedSyntax: true, precision: 2}},
+        ]
+      }
     ]
-  },
-  sassLoader: {
-    indentedSyntax: true,
-    precision: 2
-  },
-  postcss: function () {
-    return [autoprefixer];
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
   },
   plugins: debug ? [] : [
     new webpack.DefinePlugin({
-      "process.env": { 
-          NODE_ENV: JSON.stringify("production") 
-        }
+      'process.env': { 
+        NODE_ENV: JSON.stringify('production') 
+      }
     }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: true, sourcemap: false }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: false,
+      mangle: true
+    })
   ]
 };

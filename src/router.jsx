@@ -15,7 +15,13 @@ const tootChar = (c) => {
 	return String.fromCharCode((n = c.charCodeAt()) == 32 ? 12288 : n + 65248);
 }
 
-const tooify = (s) => s.split('').map(tootChar).join('');
+const bChar = (c) => c.replace('b', '🅱️');
+
+const splitmap = (s, func) => s.split('').map(func).join('');
+
+const tooify = (s) => splitmap(s, tootChar);
+
+const b = (s) => splitmap(s, bChar);
 
 const Clap = () => (
 	<TextGen processor={emojify}/>
@@ -25,12 +31,17 @@ const Toot = () => (
 	<TextGen processor={tooify}/>
 )
 
+const B = () => (
+  <TextGen processor={b}/>
+)
+
 const _Router = () => (
 	<Router history={browserHistory}>
     	<Route path="/" component={App}>
     		<IndexRedirect to="clap" />
   			<Route path="clap" component={Clap}/>
   			<Route path="toot" component={Toot}/>
+        <Route path="b" component={B}/>
   			<Route path="about" component={About}/>
     	</Route>
 	</Router>
