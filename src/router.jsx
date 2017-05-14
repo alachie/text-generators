@@ -36,6 +36,8 @@ const Clap    = () => <TextGen processor={emojify}/>
 const Toot    = () => <TextGen processor={tooify}/>
 const BButton = () => <TextGen processor={bButtonify}/>
 
+import Random from './components/Random';
+
 const _Router = () => (
 	<Router history={browserHistory}>
     	<Route path="/" component={App}>
@@ -43,6 +45,7 @@ const _Router = () => (
   			<Route path="clap" component={Clap}/>
   			<Route path="toot" component={Toot}/>
         <Route path="b" component={BButton}/>
+        <Route path="random" component={Random}/>
   			<Route path="about" component={About}/>
     	</Route>
 	</Router>
