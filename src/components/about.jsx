@@ -29,6 +29,15 @@ const About = () => (
 				<p>B is a processor that replaces the letter b with a "blood type b" emoji. Based on <a href="http://knowyourmeme.com/memes/b-button-emoji-%F0%9F%85%B1">this meme</a>.</p>
 			</div>
 		</div>
+
+		<div class="row">
+			<div class="col">
+				<span className="large">🎲</span>
+			</div>
+			<div class="col">
+				<p>Random will randomly select and emoji from a list. The aim is to update this frequently.</p>
+			</div>
+		</div>
 	</div>
 )
 export default About

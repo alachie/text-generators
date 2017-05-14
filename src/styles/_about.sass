@@ -1,10 +1,7 @@
 .about
 	flex: 1
 	text-align: center
-	display: flex
-	flex-direction: column
-	align-items: center
-	justify-content: center
+	padding: 80px 0
 	overflow-x: hidden
 	overflow-y: auto
 	-webkit-overflow-scrolling: touch
@@ -30,6 +27,7 @@
 		line-height: 1.5em
 		margin: 0
 		margin-bottom: 20px
+		margin: auto
 		font-weight: 100
 		color: rgba(white,0.5)
 
@@ -40,9 +38,20 @@
 		font-size: 60px
 
 	.row
-		max-width: 600px
+		width: 600px
+		margin: auto
+		height: auto
+		clear: both
 		margin-bottom: 20px
-		
+		//clearfix
+		&:after
+			visibility: hidden
+			display: block
+			font-size: 0
+			content: " "
+			clear: both
+			height: 0
+
 		&:last-child
 			margin-bottom: 0
 
@@ -50,6 +59,7 @@
 		text-align: left
 		width: 75%
 		float: left
+		display: inline-block
 
 		&:first-child
 			width: 25%	
@@ -68,11 +78,13 @@
 		margin-top: 40px
 
 	p, .row
+		width: 100% !important
 		display: block 
 		margin-left: auto !important
 		margin-right: auto !important
 		margin-bottom: 20px
-
+	
+ 
 	.row:last-child
 		padding-bottom: 80px
 
