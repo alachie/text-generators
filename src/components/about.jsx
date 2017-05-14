@@ -10,7 +10,7 @@ const About = () => (
 				<span className="large">👏</span>
 			</div>
 			<div class="col">
-				<p>Clap is a processor that replaces spaces in scetences with a clap emoji (<span className="inline-emoji">👏</span>) based on <a href="http://knowyourmeme.com/memes/clap-emoji">this meme</a>.</p>
+				<p>Clap is a processor that replaces spaces in Sentences with a clap emoji (<span className="inline-emoji">👏</span>) based on <a href="http://knowyourmeme.com/memes/clap-emoji">this meme</a>.</p>
 			</div>
 		</div>
 		<div class="row">
@@ -35,7 +35,7 @@ const About = () => (
 				<span className="large">🎲</span>
 			</div>
 			<div class="col">
-				<p>Random will randomly select and emoji from a list. The aim is to update this frequently.</p>
+				<p>Random will randomly select an emoji from a list. The aim is to update this frequently.</p>
 			</div>
 		</div>
 	</div>
