@@ -1,7 +1,7 @@
 # 👏🎺
 A react app to house all my text generators
 
-view live at http://txt.lachie.co (currently offline)
+view live at http://txt.lachie.co
 
 ## Features
 - :clap: Replaces spaces with a :clap:
