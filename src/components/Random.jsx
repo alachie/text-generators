@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import emojis from '../emojis';
+import emojis               from '../emojis';
+import ClipboardButton      from 'react-clipboard.js'
+import he                   from 'he'
 
 export default class Random extends Component {
 	constructor(props) {
@@ -24,10 +26,18 @@ export default class Random extends Component {
 		this.setState({emoji: _emoji});
 	}
 
+	copySuccess() {
+		alert('copied!');
+	}
+
 	render() {
 		return (
 			<div className="random">
-				<div className="output" dangerouslySetInnerHTML={{__html: this.state.emoji}}></div>
+				<div className="output">
+					<ClipboardButton data-clipboard-text={he.decode(this.state.emoji)} onSuccess={this.copySuccess}>
+						<span dangerouslySetInnerHTML={{ __html: this.state.emoji }}></span>
+					</ClipboardButton>		
+				</div>
 				<a href="#" className="reload" onClick={this.setRandomEmoji}>🎲</a>
 			</div>
 		)

@@ -1,6 +1,7 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React           from 'react'
+import { connect }     from 'react-redux'
 import { updateValue } from "../actions"
+import ClipboardButton from 'react-clipboard.js'
 
 @connect((store) => {
   return {userInput: store.userInput}
@@ -16,18 +17,6 @@ export default class TextGen extends React.Component {
 		this.props.dispatch(updateValue(value))
 	}
 
-	handleHighlight(e) {	
-		if (document.selection) {
-	        var range = document.body.createTextRange();
-	        range.moveToElementText(e.target);
-	        range.select();
-	    } else if (window.getSelection) {
-	        var range = document.createRange();
-	        range.selectNodeContents(e.target);
-	        window.getSelection().addRange(range);
-		}
-	}
-
 	generateOutput(s) {
 		const noText = '<span class="noText">🤔</span>'
 
@@ -35,20 +24,25 @@ export default class TextGen extends React.Component {
 			clapChar: this.props.userInput.clapChar
 		})
 
-		if(s.trim() === '') {
-			return noText
-		} else {
-			return output
-		}
+		return (s.trim() === '') ? noText : output;
+	}
+
+	copySuccess() {
+		alert('copied!');
 	}
 
 	render() {
 		const { inputValue } = this.props.userInput
 		const outputValue = this.generateOutput(inputValue)
+		const clibpoardDisable = (outputValue === '<span class="noText">🤔</span>')
 		return (
 			<div class="TextGen">
-				<input class="input" onKeyUp={this.handleKeyUp} placeholder="Type Something Here ✍️" defaultValue={inputValue}/>
-				<div class="output" onClick={this.handleHighlight} dangerouslySetInnerHTML={{ __html: outputValue }}/>
+				<input class="input" onKeyUp={this.handleKeyUp} placeholder="Type Something Here ✍️" defaultValue={inputValue}/>	
+				<div class="output" >
+					<ClipboardButton data-clipboard-text={outputValue} onSuccess={this.copySuccess}>
+						<span dangerouslySetInnerHTML={{ __html: outputValue }}></span>
+					</ClipboardButton>		
+				</div>
 			</div>
 		)
 	}

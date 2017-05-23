@@ -33,7 +33,9 @@
   },
   "dependencies": {
     "express": "^4.15.2",
+    "he": "^1.1.1",
     "react": "*",
+    "react-clipboard.js": "^1.1.2",
     "react-dom": "*",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",

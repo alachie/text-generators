@@ -1,6 +1,6 @@
-import React from 'react'
+import React    from 'react'
 import MainMenu from './components/MainMenu'
-import Footer from './components/Footer'
+import Footer   from './components/Footer'
 
 export default class App extends React.Component {
 	render() {
