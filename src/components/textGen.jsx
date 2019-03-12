@@ -36,14 +36,26 @@ export default class TextGen extends React.Component {
 		const outputValue = this.generateOutput(inputValue)
 		const clibpoardDisable = (outputValue === '<span class="noText">🤔</span>')
 		return (
-			<div class="TextGen">
-				<input class="input" onKeyUp={this.handleKeyUp} placeholder="Type Something Here ✍️" defaultValue={inputValue}/>	
-				<div class="output" >
-					<ClipboardButton data-clipboard-text={outputValue} onSuccess={this.copySuccess}>
-						<span dangerouslySetInnerHTML={{ __html: outputValue }}></span>
-					</ClipboardButton>		
-				</div>
-			</div>
-		)
+            <div class="TextGen">
+                <input
+                    class="input"
+                    onChange={this.handleKeyUp}
+                    placeholder="Type Something Here ✍️"
+                    defaultValue={inputValue}
+                />
+                <div class="output">
+                    <ClipboardButton
+                        data-clipboard-text={outputValue}
+                        onSuccess={this.copySuccess}
+                    >
+                        <span
+                            dangerouslySetInnerHTML={{
+                                __html: outputValue
+                            }}
+                        />
+                    </ClipboardButton>
+                </div>
+            </div>
+        );
 	}
 }
