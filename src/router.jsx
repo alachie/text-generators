@@ -32,9 +32,17 @@ const bWord     = (c) => {
 
 const bChar = (c) => c.split('').map((s) => s.replace('b', '🅱️')).join('');
 
+function tweak(c) {
+  return Math.random() < 0.5 ? c.toLowerCase() : c.toUpperCase();
+}
+const Mockify = (s) => s.split("").map(tweak).join("");
+
+
 const Clap    = () => <TextGen processor={emojify}/>
 const Toot    = () => <TextGen processor={tooify}/>
 const BButton = () => <TextGen processor={bButtonify}/>
+const Mock = () => <TextGen processor={Mockify} />
+
 
 import Random from './components/Random';
 
@@ -45,6 +53,7 @@ const _Router = () => (
   			<Route path="clap" component={Clap}/>
   			<Route path="toot" component={Toot}/>
         <Route path="b" component={BButton}/>
+        <Route path="mock" component={Mock}/>
         <Route path="random" component={Random}/>
   			<Route path="about" component={About}/>
     	</Route>

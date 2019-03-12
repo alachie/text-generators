@@ -24,7 +24,7 @@
     "babel-preset-react": "*",
     "babel-preset-stage-0": "*",
     "css-loader": "*",
-    "node-sass": "*",
+    "node-sass": "^4.11.0",
     "postcss-loader": "*",
     "sass-loader": "*",
     "style-loader": "*",

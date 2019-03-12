@@ -1,9 +1,16 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app     = express();
+const port    = process.env.PORT || 8080;
 
 app.use(express.static('build'));
 app.get('*', function(req, res){
-  res.sendFile(__dirname + '/index.html')
+  res.sendFile(__dirname + '/index.html');
 });
 
-app.listen(80);
+app.listen(port, (err) => {
+	if(err) {
+		console.log(err);
+	}
+
+	console.log('listening on port ' + port);
+});
