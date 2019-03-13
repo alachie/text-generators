@@ -68,7 +68,7 @@ const RenderHelement = (props) => {
 
 	return (
         <Helmet>
-            <title>{title}</title>
+            <title>{title} - txt.lachie.co</title>
 			<link href={favicon} rel="shortcut icon" />
         </Helmet>
     );
