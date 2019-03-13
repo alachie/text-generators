@@ -1,9 +1,16 @@
 import React   from 'react'
-import { Router, Route, Link, browserHistory, IndexRedirect } from 'react-router'
+import {
+    BrowserRouter as Router,
+    Route,
+    Redirect
+} from "react-router-dom";
+
 
 import App     from './app'
 import TextGen from './components/textGen'
 import About   from './components/about'
+
+import Random from "./components/Random";
 
 const emojify = (s, options) => {
   const { clapChar } = options
@@ -43,20 +50,19 @@ const Toot    = () => <TextGen processor={tooify}/>
 const BButton = () => <TextGen processor={bButtonify}/>
 const Mock = () => <TextGen processor={Mockify} />
 
-
-import Random from './components/Random';
-
 const _Router = () => (
-	<Router history={browserHistory}>
-    	<Route path="/" component={App}>
-    		<IndexRedirect to="clap" />
-  			<Route path="clap" component={Clap}/>
-  			<Route path="toot" component={Toot}/>
-        <Route path="b" component={BButton}/>
-        <Route path="mock" component={Mock}/>
-        <Route path="random" component={Random}/>
-  			<Route path="about" component={About}/>
-    	</Route>
+	<Router>
+    	<App>
+        <Route exact path="/" render={() => (
+          <Redirect to="/clap" />
+        )} />
+  			<Route path="/clap" component={Clap}/>
+  			<Route path="/toot" component={Toot}/>
+        <Route path="/b" component={BButton}/>
+        <Route path="/mock" component={Mock}/>
+        <Route path="/random" component={Random}/>
+  			<Route path="/about" component={About}/>
+    </App>
 	</Router>
 )
 

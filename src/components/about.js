@@ -1,6 +1,129 @@
 import React from 'react'
+
+import styled from 'styled-components';
+
+const StyledAbout = styled.div`
+    flex: 1;
+    text-align: center;
+    padding: 80px 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    h2 {
+        margin: 40px;
+        text-transform: uppercase;
+        font-weight: normal;
+        display: inline-block;
+        position: relative;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    a,
+    .inline-emoji {
+        color: var(--fg-color);
+    }
+
+    p {
+        max-width: 600px;
+        font-size: 22px;
+        text-align: left;
+        line-height: 1.5em;
+        margin: 0;
+        margin-bottom: 20px;
+        margin: auto;
+        font-weight: normal;
+        color: rgba(white, 0.5);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .large {
+        font-size: 60px;
+    }
+
+    .row {
+        width: 600px;
+        margin: auto;
+        height: auto;
+        clear: both;
+        margin-bottom: 20px;
+
+        &:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .row .col {
+        text-align: left;
+        width: 75%;
+        float: left;
+        display: inline-block;
+
+        &:first-child {
+            width: 25%;
+        }
+    }
+    @media(max-height: 700px), (max-width: 500px) {
+        padding-top: 80px;
+        align-items: stretch;
+        justify-content: flex-start;
+
+    	h2 {
+    		margin: 40px;
+            margin-top: 0;
+        }
+
+    	h2:first-child {
+            margin-top: 40px;
+        }
+
+    	p, .row{
+    		width: 100% !important;
+    		display: block;
+    		margin-left: auto !important;
+    		margin-right: auto !important;
+            margin-bottom: 20px;
+        }
+
+    	.row:last-child {
+            padding-bottom: 80px;
+        }
+    }
+
+    @media(max-width: 500px) {
+        padding-top: 40px;
+        
+    	.row:last-child{
+            padding-bottom: 40px;
+        }
+        
+    	p {
+            font-size: 16px !important;
+        }
+        
+    	h2 {
+            font-size: 20px;
+        }
+    }
+`;
+
 const About = () => (
-    <div className="about">
+    <StyledAbout>
         <h2>About</h2>
         <p>
             This app is a collection of text processors that I have written in
@@ -72,7 +195,7 @@ const About = () => (
                 <p>
                     Mock is a processor that randomly capitalises sentences.
                     Based on{" "}
-					<a href="https://knowyourmeme.com/memes/mocking-spongebob">
+                    <a href="https://knowyourmeme.com/memes/mocking-spongebob">
                         this meme
                     </a>
                     .
@@ -91,6 +214,6 @@ const About = () => (
                 </p>
             </div>
         </div>
-    </div>
+    </StyledAbout>
 );
 export default About
