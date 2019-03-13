@@ -103,7 +103,6 @@ class TextGen extends React.Component {
         const { inputValue } = this.props.userInput
         const { isShowingCopied } = this.state;
 		const outputValue = this.generateOutput(inputValue)
-		const clibpoardDisable = (outputValue === '<span class="noText">🤔</span>')
 		return (
             <StyledTextGen>
                 <input
@@ -125,7 +124,7 @@ class TextGen extends React.Component {
                             />
                         </ClipboardButton>
                     ) : (
-                        <span className="showingCopied">✂️Copied!</span>
+                        <span className="showingCopied" role="img" aria-label="scissors emoji">✂️Copied!</span>
                     )}
                 </div>
             </StyledTextGen>
