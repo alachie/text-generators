@@ -77,7 +77,7 @@ class TextGen extends React.Component {
 	}
 
 	generateOutput(s) {
-		const noText = '<span class="noText">🤔</span>'
+		const noText = '<span className="noText">🤔</span>'
 
 		const output = this.props.processor(s, {
 			clapChar: this.props.userInput.clapChar
@@ -106,12 +106,12 @@ class TextGen extends React.Component {
 		return (
             <StyledTextGen>
                 <input
-                    class="input"
+                    className="input"
                     onChange={this.handleKeyUp}
                     placeholder="Type Something Here ✍️"
                     defaultValue={inputValue}
                 />
-                <div class="output">
+                <div className="output">
                     {!isShowingCopied ? (
                         <ClipboardButton
                             data-clipboard-text={outputValue}

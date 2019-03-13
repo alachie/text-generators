@@ -16,6 +16,7 @@ const StyledAbout = styled.div`
         font-weight: normal;
         display: inline-block;
         position: relative;
+        color: var(--fg-color);
 
         &:first-child {
             margin-top: 0;
@@ -36,7 +37,7 @@ const StyledAbout = styled.div`
         margin-bottom: 20px;
         margin: auto;
         font-weight: normal;
-        color: rgba(white, 0.5);
+        color: var(--fg-color);
 
         &:last-child {
             margin-bottom: 0;
@@ -78,45 +79,46 @@ const StyledAbout = styled.div`
             width: 25%;
         }
     }
-    @media(max-height: 700px), (max-width: 500px) {
+    @media (max-height: 700px), (max-width: 500px) {
         padding-top: 80px;
         align-items: stretch;
         justify-content: flex-start;
 
-    	h2 {
-    		margin: 40px;
+        h2 {
+            margin: 40px;
             margin-top: 0;
         }
 
-    	h2:first-child {
+        h2:first-child {
             margin-top: 40px;
         }
 
-    	p, .row{
-    		width: 100% !important;
-    		display: block;
-    		margin-left: auto !important;
-    		margin-right: auto !important;
+        p,
+        .row {
+            width: 100% !important;
+            display: block;
+            margin-left: auto !important;
+            margin-right: auto !important;
             margin-bottom: 20px;
         }
 
-    	.row:last-child {
+        .row:last-child {
             padding-bottom: 80px;
         }
     }
 
-    @media(max-width: 500px) {
+    @media (max-width: 500px) {
         padding-top: 40px;
-        
-    	.row:last-child{
+
+        .row:last-child {
             padding-bottom: 40px;
         }
-        
-    	p {
+
+        p {
             font-size: 16px !important;
         }
-        
-    	h2 {
+
+        h2 {
             font-size: 20px;
         }
     }
@@ -140,11 +142,11 @@ const About = () => (
             devices, running up to date versions.
         </p>
         <h2>Glossary</h2>
-        <div class="row">
-            <div class="col">
+        <div className="row">
+            <div className="col">
                 <span className="large">👏</span>
             </div>
-            <div class="col">
+            <div className="col">
                 <p>
                     Clap is a processor that replaces spaces in Sentences with a
                     clap emoji (<span className="inline-emoji">👏</span>) based
@@ -156,11 +158,11 @@ const About = () => (
                 </p>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
+        <div className="row">
+            <div className="col">
                 <span className="large">🎺</span>
             </div>
-            <div class="col">
+            <div className="col">
                 <p>
                     Toot is a processor that replaces all regular characters
                     with{" "}
@@ -171,11 +173,11 @@ const About = () => (
                 </p>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
+        <div className="row">
+            <div className="col">
                 <span className="large">🅱️</span>
             </div>
-            <div class="col">
+            <div className="col">
                 <p>
                     B is a processor that replaces the letter b with a "blood
                     type b" emoji. Based on{" "}
@@ -187,11 +189,11 @@ const About = () => (
             </div>
         </div>
 
-        <div class="row">
-            <div class="col">
+        <div className="row">
+            <div className="col">
                 <span className="large">🧽</span>
             </div>
-            <div class="col">
+            <div className="col">
                 <p>
                     Mock is a processor that randomly capitalises sentences.
                     Based on{" "}
@@ -203,11 +205,11 @@ const About = () => (
             </div>
         </div>
 
-        <div class="row">
-            <div class="col">
+        <div className="row">
+            <div className="col">
                 <span className="large">🎲</span>
             </div>
-            <div class="col">
+            <div className="col">
                 <p>
                     Random will randomly select an emoji from a list. The aim is
                     to update this frequently.
