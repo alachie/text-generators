@@ -77,7 +77,6 @@ class TextGen extends React.Component {
         if(txt) {
             this.props.dispatch(updateValue(txt))
         }
-        console.log(txt);
     }
 
 	handleKeyUp(e) {
