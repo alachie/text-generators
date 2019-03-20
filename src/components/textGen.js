@@ -69,7 +69,16 @@ class TextGen extends React.Component {
         }
         this.handleKeyUp = this.handleKeyUp.bind(this)
         this.copySuccess = this.copySuccess.bind(this);
-	}
+    }
+    
+    componentWillMount() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const txt = urlParams.get('txt');
+        if(txt) {
+            this.props.dispatch(updateValue(txt))
+        }
+        console.log(txt);
+    }
 
 	handleKeyUp(e) {
 		const value = e.target.value
