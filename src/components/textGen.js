@@ -75,7 +75,7 @@ class TextGen extends React.Component {
         const urlParams = new URLSearchParams(window.location.search);
         const txt = urlParams.get('txt');
         if(txt) {
-            this.props.dispatch(decodeURI(updateValue(txt)));
+            this.props.dispatch(updateValue(decodeURI(txt)));
         }
     }
 
