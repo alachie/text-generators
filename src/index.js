@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: sans-serif;
         font-size: 3rem;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Roboto, sans-serif;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         color: var(--fg-color);
@@ -52,9 +52,9 @@ const GlobalStyle = createGlobalStyle`
         background: var(--bg-color)
     }
 
-    .emoji {
-        font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    }
+    // .emoji {
+    //     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    // }
 
 
     html, 
