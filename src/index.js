@@ -50,7 +50,10 @@ const GlobalStyle = createGlobalStyle`
         letter-spacing: -0.01em;
         overflow: hidden
         background: var(--bg-color)
+    }
 
+    .emoji {
+        font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
 
 
