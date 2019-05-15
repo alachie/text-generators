@@ -7,7 +7,7 @@ const StyledAbout = styled.div`
     text-align: center;
     padding: 80px 0;
     overflow-x: hidden;
-    overflow-y: auto;
+    // overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Roboto,
         sans-serif;

@@ -13,6 +13,7 @@ const StyledFooter = styled.footer`
     flex-bias: auto;
     border-top: 2px solid var(--border-color);
     margin-top: auto;
+    -webkit-overflow-scrolling: touch;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Roboto, sans-serif;
 
 	span:nth-child(2){

@@ -80,6 +80,8 @@ const GlobalStyle = createGlobalStyle`
         flex-grow: 1;
         padding: 0px 10px;
         display: flex;
+        overflow: auto;
+        // height: 500px;
     }
     .random,
     .TextGen {
