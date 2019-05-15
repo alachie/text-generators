@@ -9,6 +9,8 @@ const StyledAbout = styled.div`
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Roboto,
+        sans-serif;
 
     h2 {
         margin: 40px;
